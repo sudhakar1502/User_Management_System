@@ -18,6 +18,10 @@ route.get('/api/users',(req,res)=>{
     
 });
 
+route.get('/add-user',(req,res)=>{
+    res.render('adduser.ejs');
+});
+
 route.put('/api/users/:id',(req,res)=>{
     
 });
@@ -25,6 +29,7 @@ route.put('/api/users/:id',(req,res)=>{
 route.delete('/api/users/:id',(req,res)=>{
     
 });
+
 
 
 

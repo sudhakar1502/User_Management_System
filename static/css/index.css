@@ -1,0 +1,76 @@
+body{
+    padding:0;
+    margin: 0;
+}
+.title
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#site-main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.main-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+}
+.container
+{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+form
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.table
+{
+    width: 60%;
+}
+.table thead 
+{
+    width:100%;
+}
+.table thead  tr
+{
+    width: 50px;
+}
+.newuserform
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.newuserform form
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: auto;
+}
+.newuserform form button,input
+{
+    margin-top: 20px;
+    width: 150px;
+}
