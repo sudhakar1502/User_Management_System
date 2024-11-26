@@ -5,13 +5,25 @@ const services=require('../Services/services.js');
 
 
 
-route.post('/api/users',controller.create);
+route.get('/',(req,res)=>{
+    res.render('index.ejs');
+});
 
-route.get('/api/users',controller.find);
+route.post('/api/users',(req,res)=>{
 
-route.put('/api/users/:id',controller.update);
+});
 
-route.delete('/api/users/:id',controller.delet);
+route.get('/api/users',(req,res)=>{
+    
+});
+
+route.put('/api/users/:id',(req,res)=>{
+    
+});
+
+route.delete('/api/users/:id',(req,res)=>{
+    
+});
 
 
 
