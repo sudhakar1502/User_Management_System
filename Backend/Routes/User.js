@@ -3,9 +3,10 @@ const route=express.Router();
 const controller=require('../Controller/usercontroller.js');
 const services=require('../Services/services.js');
 
-
+const path=require('path');
 
 route.get('/',(req,res)=>{
+    console.log(path.join(__dirname, '..', 'views'));
     res.render('index.ejs');
 });
 
