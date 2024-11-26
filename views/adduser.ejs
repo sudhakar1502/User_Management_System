@@ -5,8 +5,33 @@
     <input type="text" name='id' placeholder="ID"/>
     <input type="text" name='name' placeholder="Name"/>
     <input type="text" name='name' placeholder="Email"/>
-    <input type="text" name='name' placeholder="Gender"/>
-    <input type="text" name='name' placeholder="Status"/>
+    <div class="status">
+        <h4>Gender:</h4>    
+            <section>
+                <span>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender"  id="male">
+                </span>
+            <span>
+                <label for="female">Female</label>
+                <input type="radio" name="gender"  id="female">
+            </span>
+            </section>
+          </div>
+    <div class="status">
+    <h4>Status:</h4>    
+        <section>
+            <span>
+                <label for="Working">Working</label>
+                <input type="radio" name="status"  id="working">
+            </span>
+        <span>
+            <label for="nonworking">Non Working</label>
+            <input type="radio" name="status"  id="nonworking">
+        </span>
+        </section>
+      </div>
+
     <button type="Submit">Submit</button>
 </form>
 </div>

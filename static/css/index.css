@@ -1,6 +1,7 @@
 body{
     padding:0;
     margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .title
 {
@@ -8,6 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: bisque;
 }
 #site-main
 {
@@ -19,9 +21,8 @@ body{
 .main-container
 {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
     width: 100%;
 }
 .container
@@ -73,4 +74,48 @@ form
 {
     margin-top: 20px;
     width: 150px;
+}
+.userbutton
+{
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+.userbutton a
+{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+.searchbox
+{
+    background-color:blanchedalmond;
+    padding: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+.status
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.status section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.status section span
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    margin-left: 20px;
+    margin-top: 10px;
+    height: auto;
 }
