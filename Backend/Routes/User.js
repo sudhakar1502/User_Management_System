@@ -11,7 +11,8 @@ route.get('/',(req,res)=>{
 });
 
 route.post('/api/users',(req,res)=>{
-
+  const body=req.body;
+  console.log(body);
 });
 
 route.get('/api/users',(req,res)=>{

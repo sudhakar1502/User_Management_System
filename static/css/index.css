@@ -41,6 +41,14 @@ form
     align-items: center;
     width: 100%;
 }
+form .submitbutton
+{
+    background-color: rgb(84, 3, 84);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+}
 .table
 {
     width: 60%;

@@ -1,7 +1,7 @@
 <%- include('include/header.ejs')%>
 
-<div class="newuserform">
-<form>
+<div id="newuserform">
+<form class="adduser">
     <input type="text" name='id' placeholder="ID"/>
     <input type="text" name='name' placeholder="Name"/>
     <input type="text" name='name' placeholder="Email"/>
@@ -10,11 +10,11 @@
             <section>
                 <span>
                     <label for="male">Male</label>
-                    <input type="radio" name="gender"  id="male">
+                    <input type="radio" name="gender"  id="male" value="male">
                 </span>
             <span>
                 <label for="female">Female</label>
-                <input type="radio" name="gender"  id="female">
+                <input type="radio" name="gender"  id="female" value="female">
             </span>
             </section>
           </div>
@@ -23,15 +23,16 @@
         <section>
             <span>
                 <label for="Working">Working</label>
-                <input type="radio" name="status"  id="working">
+                <input type="radio" name="status"  id="working" value="working">
             </span>
         <span>
             <label for="nonworking">Non Working</label>
-            <input type="radio" name="status"  id="nonworking">
+            <input type="radio" name="status"  id="nonworking" value="nonworking">
         </span>
         </section>
       </div>
-
-    <button type="Submit">Submit</button>
+    <button type="Submit" class="submitbutton">Submit</button>
 </form>
 </div>
+
+<%-include('include/footer.ejs')%>
