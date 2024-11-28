@@ -7,7 +7,7 @@ const form=document.querySelector(".adduser");
 window.onload=async()=>{
     if(window.location.pathname=="/")
     {
-       const response=await fetch(`${localUrl}/fetchusers`,{method:'GET'});
+       const response=await fetch(`${localUrl}/api/users/fetchusers`,{method:'GET'});
 
        try
        {
@@ -15,6 +15,7 @@ window.onload=async()=>{
         {
           const data=await response.json();
           console.log(data);
+          return data;
         }
        }
        catch(error)

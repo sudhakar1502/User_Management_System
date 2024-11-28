@@ -5,10 +5,10 @@ const model=require('../model/model.js');
 
 const path=require('path');
 
-route.get('/',(req,res)=>{
-    console.log(path.join(__dirname, '..', 'views'));
-    res.render('index.ejs');
-});
+// route.get('/',(req,res)=>{
+//     console.log(path.join(__dirname, '..', 'views'));
+//     res.render('index.ejs');
+// });
 
 route.post('/api/users/create',async (req,res)=>{
   const body=req.body;
@@ -37,10 +37,10 @@ route.post('/api/users/create',async (req,res)=>{
   }
 });
 
-route.get('/api/users/fetchusers',async (req,res)=>{
+route.get('/',async (req,res)=>{
       const users=await model.find({});
 
-      return res.json({"message":users});
+      res.render('index.ejs',{"users":users});
 });
 
 route.get('/add-user',(req,res)=>{
