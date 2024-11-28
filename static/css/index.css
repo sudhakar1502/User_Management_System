@@ -40,6 +40,7 @@ form
     justify-content: center;
     align-items: center;
     width: 100%;
+    flex-direction: column;
 }
 form .submitbutton
 {
@@ -48,6 +49,7 @@ form .submitbutton
     border: none;
     padding: 10px;
     font-size: 14px;
+    margin-top: 20px;
 }
 .table
 {
@@ -78,9 +80,9 @@ form .submitbutton
     width: 400px;
     height: auto;
 }
-.newuserform form button,input
+.newuserform form .submitbutton,input
 {
-    margin-top: 20px;
+    margin-top: 30px;
     width: 150px;
 }
 .userbutton
