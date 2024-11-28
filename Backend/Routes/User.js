@@ -47,12 +47,15 @@ route.get('/add-user',(req,res)=>{
     res.render('adduser.ejs');
 });
 
-route.put('/api/users/:id',(req,res)=>{
-    
+route.get('/updateuser',(req,res)=>{
+    const query=req.query;
+    console.log(query);
+    res.render('updateuser.ejs');
+
 });
 
-route.delete('/api/users/:id',(req,res)=>{
-    
+route.delete('/deleteuser',(req,res)=>{
+    const query=req.query;
 });
 
 

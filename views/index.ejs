@@ -38,8 +38,8 @@
                             <th><%= users[i].gender %></th>
                             <th><%= users[i].status %></th>
                             <th>
-                                <img src="static/assets/edit.png" alt="edit" width="20" height="20"/> 
-                                <img src="static/assets/delete.png" alt="delete" width="20" height="20"/> 
+                                <a href="/updateuser?email=<%= users[i].email%>"><img src="static/assets/edit.png" alt="edit" width="20" height="20"/></a> 
+                                <a href="/deleteuser?email=<%= users[i].email%>"><img src="static/assets/delete.png" alt="delete" width="20" height="20"/> </a>
                             </th>
                         </tr>
                         <%}%>
