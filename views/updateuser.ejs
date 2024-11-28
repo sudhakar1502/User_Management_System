@@ -1,0 +1,38 @@
+<%- include('include/header.ejs')%>
+
+<div id="newuserform">
+<form class="adduser">
+    <input type="text" name='name' placeholder="Name"/>
+    <input type="email" name='email' placeholder="Email"/>
+    <div class="status">
+        <h4>Gender:</h4>    
+            <section>
+                <span>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender"  id="male" value="male">
+                </span>
+            <span>
+                <label for="female">Female</label>
+                <input type="radio" name="gender"  id="female" value="female">
+            </span>
+            </section>
+          </div>
+    <div class="status">
+    <h4>Status:</h4>    
+        <section>
+            <span>
+                <label for="Working">Working</label>
+                <input type="radio" name="status"  id="working" value="working">
+            </span>
+        <span>
+            <label for="nonworking">Non Working</label>
+            <input type="radio" name="status"  id="nonworking" value="nonworking">
+        </span>
+        </section>
+      </div>
+    <button type="Submit" class="submitbutton">Submit</button>
+    <label style="color: red;" id="errormessage"></label>
+</form>
+</div>
+
+<%-include('include/footer.ejs')%>
