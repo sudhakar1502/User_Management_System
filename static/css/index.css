@@ -54,10 +54,22 @@ form .submitbutton
 .table
 {
     width: 60%;
+    height: 100%;
 }
 .table thead 
 {
     width:100%;
+    height: 70%;
+    margin-top: 20px;
+}
+.table .theadmain
+{
+    background-color: greenyellow;
+}
+.table .theadmain th
+{
+    width: 200px;
+    height: 5px;
 }
 .table thead  tr
 {
@@ -128,4 +140,14 @@ form .submitbutton
     margin-left: 20px;
     margin-top: 10px;
     height: auto;
+}
+tbody
+{
+    background-color: red;
+}
+.thead
+{
+
+    margin-top: 10px;
+    height: 100%;
 }

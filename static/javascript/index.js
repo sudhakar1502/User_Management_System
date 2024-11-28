@@ -4,7 +4,9 @@ const form=document.querySelector(".adduser");
 
 
 
-window.onload=async()=>{
+window.onload=async(e)=>{
+
+    e.preventDefault();
     if(window.location.pathname=="/")
     {
        const response=await fetch(`${localUrl}/api/users/fetchusers`,{method:'GET'});
@@ -23,7 +25,7 @@ window.onload=async()=>{
           console.log(error);
        } 
     }
-    else if(window.location.pathname=="/adduser")
+    else if(window.location.pathname=="/add-user")
     {
         form.onsubmit=async (e)=>{
             e.preventDefault();

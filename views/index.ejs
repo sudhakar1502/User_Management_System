@@ -18,7 +18,7 @@
             </div>
         <Form action="/" method="post">
             <table class="table">
-                <thead class="thead-dark">
+                <thead class="theadmain">
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
@@ -29,7 +29,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <thead class="thead-dark">
+                    <thead class="thead">
                         <% for(let i=0;i<users.length;i++) { %>
                         <tr>
                             <th><%= i+1 %></th>
@@ -38,8 +38,8 @@
                             <th><%= users[i].gender %></th>
                             <th><%= users[i].status %></th>
                             <th>
-                                <img src="#" alt="edit"/> 
-                                <img src="#" alt="delete"/> 
+                                <img src="static/assets/edit.png" alt="edit" width="20" height="20"/> 
+                                <img src="static/assets/delete.png" alt="delete" width="20" height="20"/> 
                             </th>
                         </tr>
                         <%}%>
