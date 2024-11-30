@@ -89,6 +89,8 @@ window.onload=async(e)=>{
 function DeleteButton(){
     const deleteBtn=document.getElementById('deleteBtn');
 
+    if(!deleteBtn)
+        return;
     deleteBtn.onclick=async (e)=>{
         const email=deleteBtn.getAttribute('data-email');
 
@@ -98,7 +100,10 @@ function DeleteButton(){
                     if(response.ok)
                     {
                         const data=await response.json();
-                        error.innerText=data.message;
+                        if(data)
+                        {
+                            window.location.reload();
+                        }
                         return data;
                     }
         

@@ -80,9 +80,27 @@ route.put('/updateuser',async(req,res)=>{
 
 });
 
-route.delete('/deleteuser',(req,res)=>{
+route.delete('/deleteuser',async (req,res)=>{
     const query=req.query;
-    console.log(query);
+    
+    if(!query)
+    {
+      res.json({message:"query invalid!"});
+    }
+    try
+    {
+          const user=await model.deleteOne({email:query.email});
+        if(!user)
+          return res.json({message:"user not found!"});
+  
+         
+        res.status(200).json({ message: "User deleted successfully.", user });
+    }
+    catch(err)
+    {
+      res.json({message:"Network issue!"});
+  
+    }
 });
 
 
