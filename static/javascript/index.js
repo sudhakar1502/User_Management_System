@@ -24,6 +24,7 @@ window.onload=async(e)=>{
        {
           console.log(error);
        } 
+       DeleteButton();
     }
     else if(window.location.pathname=="/add-user")
     {
@@ -79,4 +80,41 @@ window.onload=async(e)=>{
                 }
             }
         }
+        else if(window.location.pathname=="/")
+            {
+              
+            }
 }
+
+function DeleteButton(){
+    const deleteBtn=document.getElementById('deleteBtn');
+
+    deleteBtn.onclick=async (e)=>{
+        const email=deleteBtn.getAttribute('data-email');
+
+           try{
+                    const response=await fetch(`${localUrl}/deleteuser?email=${email}`,{method:"DELETE"});
+        
+                    if(response.ok)
+                    {
+                        const data=await response.json();
+                        error.innerText=data.message;
+                        return data;
+                    }
+        
+                }
+                catch(err)
+                {
+                    console.log(err);
+                }
+    
+    // form.onsubmit=async (e)=>{
+    //     e.preventDefault();
+        
+    //     // const form=new FormData(e.target);
+    //     // const entries=Object.fromEntries(form.entries());
+    //     // const error=document.getElementById('errormessage');
+    //     // entries.email = email;
+    //    
+    // }
+}}

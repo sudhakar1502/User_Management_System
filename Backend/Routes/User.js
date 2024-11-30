@@ -82,6 +82,7 @@ route.put('/updateuser',async(req,res)=>{
 
 route.delete('/deleteuser',(req,res)=>{
     const query=req.query;
+    console.log(query);
 });
 
 
