@@ -48,9 +48,35 @@ route.get('/add-user',(req,res)=>{
 });
 
 route.get('/updateuser',(req,res)=>{
-    const query=req.query;
-    console.log(query);
+
     res.render('updateuser.ejs');
+
+});
+
+route.put('/updateuser',async(req,res)=>{
+
+  const body=req.body;
+  if(!body)
+  {
+    res.json({message:"body not found!"});
+  }
+  try
+  {
+        const user=await model.findOne({email:body.email});
+      if(!user)
+        return res.json({message:"user not found!"});
+
+      user.name=body.name;
+      user.gender=body.gender;
+      user.status=body.status;
+      await user.save();
+      res.status(200).json({ message: "User updated successfully.", user });
+  }
+  catch(err)
+  {
+    res.json({message:"Network issue!"});
+
+  }
 
 });
 
