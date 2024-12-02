@@ -1,3 +1,4 @@
+const { response } = require("express");
 
 const localUrl='http://localhost:2000'
 const form=document.querySelector(".adduser");
@@ -84,6 +85,22 @@ window.onload=async(e)=>{
             {
               
             }
+}
+SearchButton();
+function SearchButton()
+{
+    const searchInput=document.querySelector('.search');
+    searchInput.addEventListener('input',async (e)=>{
+        const response=await fetch(`${localUrl}/search/${e.target.value}`,{method:'GET'});
+        if(response.ok)
+        {
+            const data=await response.json();
+            console.log("data",data);
+            return data;
+        }
+        console.log("Reponse not ok!");
+    });
+
 }
 
 function DeleteButton(){
