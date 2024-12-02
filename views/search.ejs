@@ -9,12 +9,12 @@
                  New User
                 </a>
             </div>
-                <div class="searchbox"> 
+                <!-- <div class="searchbox"> 
                     <input type="search" class="search">   
-                    <a href="#" class="searchbtn">
+                    <a href="#" class="border-shadow searchBtn">
                       Search
                     </a>  
-                </div>
+                </div> -->
             </div>
         <Form action="/" method="post">
             <table class="table">
@@ -30,16 +30,16 @@
                 </thead>
                 <tbody>
                     <thead class="thead">
-                        <% for(let i=0;i<users?.length;i++) { %>
+                        <% for(let i=0;i<users.length;i++) { %>
                         <tr>
                             <th><%= i+1 %></th>
-                            <th><%= users[i]?.name %></th>
-                            <th><%= users[i]?.email %></th>
-                            <th><%= users[i]?.gender %></th>
-                            <th><%= users[i]?.status %></th>
+                            <th><%= users[i].name %></th>
+                            <th><%= users[i].email %></th>
+                            <th><%= users[i].gender %></th>
+                            <th><%= users[i].status %></th>
                             <th>
-                                <a href="/updateuser?email=<%= users[i].email%>"><img src="static/assets/edit.png" alt="edit" width="20" height="20"/></a> 
-                                <a href="#"   id="deleteBtn" data-email="<%= users[i].email%>"><img src="static/assets/delete.png" alt="delete" width="20" height="20"/> </a>
+                                <a href="/updateuser?email=<%= users[i].email%>"><img src="/static/assets/edit.png" alt="edit" width="20" height="20"/></a> 
+                                <a href="#" id="deleteBtn" data-email="<%= users[i].email%>"><img src="/static/assets/delete.png" alt="delete" width="20" height="20"/> </a>
                             </th>
                         </tr>
                         <%}%>

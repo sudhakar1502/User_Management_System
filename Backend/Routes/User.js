@@ -55,6 +55,15 @@ route.get('/updateuser',(req,res)=>{
 
 });
 
+route.get('/search/:ID',async (req,res)=>{
+  const params=req.params.ID;
+  
+  const users=await model.find({"name":params})
+  console.log(users.length);
+  
+   res.render('search.ejs',{users});
+});
+
 route.put('/updateuser',async(req,res)=>{
 
   const body=req.body;

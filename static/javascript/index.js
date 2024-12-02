@@ -1,4 +1,3 @@
-const { response } = require("express");
 
 const localUrl='http://localhost:2000'
 const form=document.querySelector(".adduser");
@@ -89,16 +88,23 @@ window.onload=async(e)=>{
 SearchButton();
 function SearchButton()
 {
+    const searchBtn=document.querySelector('.searchbtn');
     const searchInput=document.querySelector('.search');
-    searchInput.addEventListener('input',async (e)=>{
-        const response=await fetch(`${localUrl}/search/${e.target.value}`,{method:'GET'});
-        if(response.ok)
-        {
-            const data=await response.json();
-            console.log("data",data);
-            return data;
-        }
-        console.log("Reponse not ok!");
+
+    console.log(searchBtn);
+    if(!searchInput || !searchBtn)return;
+  
+    searchBtn.addEventListener('click',async (e)=>{
+
+        window.location.href=`${localUrl}/search/${searchInput.value}`
+        // const response=await fetch(`${localUrl}/search/${searchInput.innerText}`,{method:'GET'});
+        // if(response.ok)
+        // {
+        //     const data=await response.json();
+        //     console.log("data",data);
+        //     return data;
+        // }
+        // console.log("Reponse not ok!");
     });
 
 }
