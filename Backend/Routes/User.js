@@ -49,7 +49,9 @@ route.get('/add-user',(req,res)=>{
 
 route.get('/updateuser',(req,res)=>{
 
-    res.render('updateuser.ejs');
+  const query=req.query.email;
+
+    res.render('updateuser.ejs',{"email":query});
 
 });
 
