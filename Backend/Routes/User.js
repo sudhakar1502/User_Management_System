@@ -5,10 +5,6 @@ const model=require('../model/model.js');
 
 const path=require('path');
 
-// route.get('/',(req,res)=>{
-//     console.log(path.join(__dirname, '..', 'views'));
-//     res.render('index.ejs');
-// });
 
 route.post('/api/users/create',async (req,res)=>{
   const body=req.body;
@@ -50,8 +46,7 @@ route.get('/add-user',(req,res)=>{
 route.get('/updateuser',(req,res)=>{
 
   const query=req.query.email;
-
-    res.render('updateuser.ejs',{"email":query});
+  res.render('updateuser.ejs',{"email":query});
 
 });
 
@@ -66,7 +61,6 @@ route.get('/search/:ID',async (req,res)=>{
   const usersByStatus=await model.find({"status":params}).sort({"name":1});;
 
 
-  console.log(usersByGender);
   if(usersByEmail.length>0)
   {
     return res.render('search.ejs',{"users":usersByEmail});
@@ -119,6 +113,7 @@ route.delete('/deleteuser',async (req,res)=>{
     try
     {
           const user=await model.deleteOne({email:query.email});
+          console.log(user);
         if(!user)
           return res.json({message:"user not found!"});
   

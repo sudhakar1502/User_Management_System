@@ -110,31 +110,38 @@ function SearchButton()
 }
 
 function DeleteButton(){
-    const deleteBtn=document.getElementById('deleteBtn');
+    const deleteBtn=document.querySelectorAll('#deleteBtn');
+    console.log(deleteBtn);
 
     if(!deleteBtn)
         return;
-    deleteBtn.onclick=async (e)=>{
-        const email=deleteBtn.getAttribute('data-email');
 
-           try{
-                    const response=await fetch(`${localUrl}/deleteuser?email=${email}`,{method:"DELETE"});
-        
-                    if(response.ok)
-                    {
-                        const data=await response.json();
-                        if(data)
+    for(let btn of deleteBtn)
+    {
+        btn.onclick=async (e)=>{
+            const email=btn.getAttribute('data-email');
+    
+            console.log('email',email);
+               try{
+                        const response=await fetch(`${localUrl}/deleteuser?email=${email}`,{method:"DELETE"});
+            
+                        if(response.ok)
                         {
-                            window.location.reload();
+                            const data=await response.json();
+                            if(data)
+                            {
+                                window.location.reload();
+                            }
+                            return data;
                         }
-                        return data;
+            
                     }
-        
-                }
-                catch(err)
-                {
-                    console.log(err);
-                }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
+    }
+   
     
     // form.onsubmit=async (e)=>{
     //     e.preventDefault();
