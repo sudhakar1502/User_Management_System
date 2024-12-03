@@ -25,7 +25,7 @@ route.post('/api/users/create',async (req,res)=>{
       return res.json({"message":"User already present!"});
      }
      
-     const user=await model.create ({name:body.name,email:body.email,status:body.status,gender:body.email});
+     const user=await model.create ({name:body.name,email:body.email,status:body.status,gender:body.gender});
      console.log('user',user);
      
      return res.json({"message":"user created!"});
@@ -58,10 +58,25 @@ route.get('/updateuser',(req,res)=>{
 route.get('/search/:ID',async (req,res)=>{
   const params=req.params.ID;
   
-  const users=await model.find({"name":params})
-  console.log(users.length);
-  
-   res.render('search.ejs',{users});
+  const usersByName=await model.find({"name":params});
+  const usersByEmail=await model.find({"email":params});
+
+  const usersByGender=await model.find({"gender":params});
+
+  const usersByStatus=await model.find({"status":params});
+
+
+  console.log(usersByGender);
+  if(usersByEmail.length>0)
+   return res.render('search.ejs',{"users":usersByEmail});
+  if(usersByName.length>0)
+   return  res.render('search.ejs',{"users":usersByName});
+  if(usersByGender.length>0)
+   return  res.render('search.ejs',{"users":usersByGender});
+  if(usersByStatus.length>0)
+    return res.render('search.ejs',{"users":usersByStatus});
+
+  return res.render('search.ejs',{"users":usersByName});
 });
 
 route.put('/updateuser',async(req,res)=>{
@@ -110,7 +125,6 @@ route.delete('/deleteuser',async (req,res)=>{
     catch(err)
     {
       res.json({message:"Network issue!"});
-  
     }
 });
 
