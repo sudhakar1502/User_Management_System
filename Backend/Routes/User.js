@@ -58,17 +58,20 @@ route.get('/updateuser',(req,res)=>{
 route.get('/search/:ID',async (req,res)=>{
   const params=req.params.ID;
   
-  const usersByName=await model.find({"name":params});
-  const usersByEmail=await model.find({"email":params});
+  const usersByName=await model.find({"name":params}).sort({"name":1});
+  const usersByEmail=await model.find({"email":params}).sort({"name":1});;
 
-  const usersByGender=await model.find({"gender":params});
+  const usersByGender=await model.find({"gender":params}).sort({"name":1});;
 
-  const usersByStatus=await model.find({"status":params});
+  const usersByStatus=await model.find({"status":params}).sort({"name":1});;
 
 
   console.log(usersByGender);
   if(usersByEmail.length>0)
-   return res.render('search.ejs',{"users":usersByEmail});
+  {
+    return res.render('search.ejs',{"users":usersByEmail});
+  }
+ 
   if(usersByName.length>0)
    return  res.render('search.ejs',{"users":usersByName});
   if(usersByGender.length>0)
