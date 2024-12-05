@@ -169,3 +169,15 @@ tbody
     margin-top: 20px;
     color: red;
 }
+.footer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
