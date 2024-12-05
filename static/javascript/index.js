@@ -30,6 +30,7 @@ window.onload=async(e)=>{
     {
         form.onsubmit=async (e)=>{
             e.preventDefault();
+            Validation();
             const form=new FormData(e.target);
             const entries=Object.fromEntries(form.entries());
             const error=document.getElementById('errormessage');
@@ -141,15 +142,44 @@ function DeleteButton(){
                         console.log(err);
                     }
     }
-   
-    
-    // form.onsubmit=async (e)=>{
-    //     e.preventDefault();
-        
-    //     // const form=new FormData(e.target);
-    //     // const entries=Object.fromEntries(form.entries());
-    //     // const error=document.getElementById('errormessage');
-    //     // entries.email = email;
-    //    
-    // }
 }}
+
+function Validation()
+{
+    const name=document.querySelector('.name');
+    const email=document.querySelector('.email');
+
+    const gender=document.querySelector('.gender');
+    const statusInputs = document.querySelectorAll('.status');
+
+    const nameLabel=document.querySelector('.namelabel');
+    const emailLabel=document.querySelector('.emaillabel');
+    
+    const statusError= document.querySelector('#errormessage');
+
+    statusError.innerText = "";
+
+    let statusSelected = false;
+    statusInputs.forEach((input) => {
+        if (input.checked) {
+            statusSelected = true;
+        }
+    });
+
+    if (!statusSelected) {
+        statusError.innerText = "Please select your status!";
+    }
+
+    if (!name.value.trim()) {
+        nameLabel.innerText = "Name is required!";
+    }
+    if (!email.value.trim()) {
+        emailLabel.innerText = "Email is required!";
+    }
+    if(!gender.value)
+    {
+        errormessage.innerText="Gender is required!";
+        return;
+    }
+
+}

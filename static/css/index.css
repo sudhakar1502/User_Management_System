@@ -151,3 +151,21 @@ tbody
     margin-top: 10px;
     height: 100%;
 }
+.namecolumn,.emailcolumn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    flex-direction: column;
+}
+.namelabel,.emaillabel
+{
+    color: red;
+}
+.status section span .statuslabel,.genderlabel
+{
+    margin-left: 20px;
+    margin-top: 20px;
+    color: red;
+}

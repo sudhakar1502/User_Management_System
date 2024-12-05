@@ -2,18 +2,25 @@
 
 <div id="newuserform">
 <form class="adduser">
-    <input type="text" name='name' placeholder="Name"/>
-    <input type="email" name='email' placeholder="Email"/>
+    <div class="namecolumn">
+        <input type="text" name='name' placeholder="Name" class="name"/>
+        <label class="namelabel"></label>
+    </div>
+    <div class="emailcolumn">
+    <input type="email" name='email' placeholder="Email" class="email"/>
+    <label class="emaillabel"></label>
+    </div>
     <div class="status">
         <h4>Gender:</h4>    
             <section>
                 <span>
                     <label for="male">Male</label>
-                    <input type="radio" name="gender"  id="male" value="male">
+                    <input type="radio" name="gender"  id="male" value="male" class="gender">
+          
                 </span>
             <span>
                 <label for="female">Female</label>
-                <input type="radio" name="gender"  id="female" value="female">
+                <input type="radio" name="gender"  id="female" value="female" class="gender">
             </span>
             </section>
           </div>
@@ -22,11 +29,11 @@
         <section>
             <span>
                 <label for="Working">Working</label>
-                <input type="radio" name="status"  id="working" value="working">
+                <input type="radio" name="status"  id="working" value="working" class="status">
             </span>
         <span>
             <label for="nonworking">Non Working</label>
-            <input type="radio" name="status"  id="nonworking" value="nonworking">
+            <input type="radio" name="status"  id="nonworking" value="nonworking" class="status">
         </span>
         </section>
       </div>
