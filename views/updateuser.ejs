@@ -2,9 +2,14 @@
 
 <div id="newuserform">
 <form class="adduser" id="updateuser">
-    <input type="text" name='name' placeholder="Name"/>
-    <input type="email" name='email' placeholder=<%=email%>  disabled="disabled"/>
-
+    <div class="namecolumn">
+        <input type="text" name='name' placeholder="Name" class="name"/>
+        <label class="namelabel"></label>
+    </div>
+    <div class="emailcolumn">
+    <input type="email" name='email'placeholder=<%=email%>  disabled="disabled" />
+    <label class="emaillabel"></label>
+    </div>
     <div class="status">
         <h4>Gender:</h4>    
             <section>

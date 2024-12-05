@@ -58,7 +58,7 @@ window.onload=async(e)=>{
             const email=window.location.search.toString().split('=')[1];
             form.onsubmit=async (e)=>{
                 e.preventDefault();
-                
+                Validation()
                 const form=new FormData(e.target);
                 const entries=Object.fromEntries(form.entries());
                 const error=document.getElementById('errormessage');
@@ -71,6 +71,7 @@ window.onload=async(e)=>{
                     {
                         const data=await response.json();
                         error.innerText=data.message;
+                        console.log(data);
                         return data;
                     }
     
@@ -157,6 +158,8 @@ function Validation()
     
     const statusError= document.querySelector('#errormessage');
 
+    nameLabel.innerText="";
+    emailLabel.innerText="";
     statusError.innerText = "";
 
     let statusSelected = false;
@@ -173,12 +176,8 @@ function Validation()
     if (!name.value.trim()) {
         nameLabel.innerText = "Name is required!";
     }
-    if (!email.value.trim()) {
+    if (email && !email.value.trim()) {
         emailLabel.innerText = "Email is required!";
-    }
-    if(!gender.value)
-    {
-        errormessage.innerText="Gender is required!";
         return;
     }
 
